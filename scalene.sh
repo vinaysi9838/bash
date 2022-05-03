@@ -10,10 +10,12 @@
 read X
 read Y
 read Z
-if [ $X == $Y ] || [ $Y == $Z ] || [ $Z == $X ]
+if [ $X == $Y ] && [ $Y == $Z ] 
 then
      echo "EQUILATERAL"
-     
-else
+elif [ $X -ne $Y ] && [ $Y -ne $Z ] && [ $Z -ne $X ]
+then
      echo "SCALENE"
-fi 
+else
+     echo "ISOSCELES"
+fi
